@@ -4,15 +4,16 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "dev": "npm run start",
-      "start": "nodemon server/index.js"
+        "dev": "npm run start",
+        "start": "nodemon server/index.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "express": "^4.19.2",
-      "firebase": "^8.10.0",
-      "nodemon": "^3.1.0"
+        "cors": "^2.8.5",
+        "express": "^4.19.2",
+        "firebase": "^8.10.0",
+        "nodemon": "^3.1.0"
     }
-  }
+}
