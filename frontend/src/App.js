@@ -1,6 +1,6 @@
  // App.js
  import React, { useState, useEffect } from 'react';
- 
+ import axios from 'axios';
 
  function App() {
   const [data, setData] = useState(null);
@@ -11,12 +11,11 @@
   useEffect(() => {
   const fetchData = async () => {
   try {
-  const response = await fetch('http://localhost:3001/'); 
-  if (!response.ok) {
+  const response = await axios.get('http://localhost:3001/');
+  if (response.status !== 200) {
   throw new Error(`HTTP error! status: ${response.status}`);
   }
-  const json = await response.json();
-  setData(json);
+  setData(response.data);
   } catch (e) {
   setError(e);
   } finally {
