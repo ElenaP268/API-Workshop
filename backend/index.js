@@ -21,6 +21,12 @@ app.get("/", async (req, res) => {
   res.send(list);
 });
 
+/**
+ * sample request body:
+ *  {  
+      “name”: “User 2”
+    }
+ */
 app.post("/create", async (req, res) => {
   await User.add({ 
     name: req.body.name,
@@ -28,6 +34,13 @@ app.post("/create", async (req, res) => {
   res.send({ msg: "User Added" });
 });
 
+/**
+ * sample request body:
+ *  { 
+      "id": "xmRyzPAdd6ew07V2tMM7",
+      “name”: “User x”
+    }
+ */
 app.put("/update", async (req, res) => {
   const id = req.body.id;
   delete req.body.id;
@@ -36,6 +49,12 @@ app.put("/update", async (req, res) => {
   res.send({ msg: "Updated" });
 });
 
+/**
+ * sample request body:
+ *  { 
+      "id": "xmRyzPAdd6ew07V2tMM7"
+    }
+ */
 app.delete("/delete", async (req, res) => {
   const id = req.body.id;
   await User.doc(id).delete();
